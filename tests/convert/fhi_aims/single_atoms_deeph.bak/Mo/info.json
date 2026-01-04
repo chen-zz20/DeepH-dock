@@ -1,0 +1,1 @@
+{"atoms_quantity": 1, "orbits_quantity": 49, "orthogonal_basis": false, "spinful": false, "fermi_energy_eV": null, "elements_orbital_map": {"Mo": [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 4]}, "elements_core_orbital_index": {"Mo": [0, 1, 2, 3, 6, 7, 10]}, "elements_valence_orbital_index": {"Mo": [5, 8, 11]}, "elements_unoccupied_orbital_index": {"Mo": [4, 9, 12, 13, 14]}}

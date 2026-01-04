@@ -1,0 +1,5 @@
+Loading netcdf/4.4.1-parallel-icc20
+  Loading requirement: oneAPI/2022.1 mpi/oneAPI/2022.1 hdf5/1.8.13-icc
+OMP: Info #277: omp_get_nested routine deprecated, please use omp_get_max_active_levels instead.
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+Job completed

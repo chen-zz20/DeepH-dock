@@ -1,0 +1,201 @@
+ AUTO_SET NBANDS to 23
+ AUTO_SET NBANDS to 23
+ Grid_Technique::init_atoms_on_grid  warning : No atom on this sub-FFT-mesh.
+      Processor           Atom
+              1              0
+              2              0
+              3              0
+              4              3
+              5              4
+              6              8
+              7             11
+              8             12
+              9             18
+             10             20
+             11             22
+             12             23
+             13             23
+             14             22
+             15             22
+             16             20
+             17             16
+             18             12
+             19             10
+             20              7
+             21              4
+             22              2
+             23              0
+             24              0
+             25              0
+             26              0
+             27              0
+             28              0
+             29              0
+             30              0
+             31              0
+             32              0
+             33              0
+             34              0
+             35              0
+             36              0
+             37              0
+             38              0
+             39              0
+             40              0
+             41              0
+             42              0
+             43              0
+             44              0
+             45              0
+             46              0
+             47              0
+             48              0
+             49              0
+             50              0
+             51              0
+             52              0
+             53              0
+             54              0
+             55              0
+             56              0
+             57              0
+             58              0
+             59              0
+             60              0
+             61              0
+             62              0
+             63              0
+             64              0
+ Grid_Technique::init_atoms_on_grid2  warning : no atom on this sub FFT grid.
+                            startmag_type = 2
+                       charge from rho_at = 13.9093
+                         charge should be = 14
+                            startmag_type = 2
+                       charge from rho_at = 5.98967
+                         charge should be = 6
+ Warning: negative or imaginary starting charge :  neg = -0.000196958 ima = 1.20601e-14 SPIN = 0
+
+ SETUP ATOMIC RHO FOR SPIN 1
+                 Electron number from rho = 26
+           total electron number from rho = 26
+                                should be = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000950094
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001299522
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000726399
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001335532
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001221895
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001212185
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001211735
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001214988
+                  charge after normalized = 26
+                 charge before normalized = 25.9999999999999
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001218489
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001221026
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001222609
+                  charge after normalized = 26.0000000000001
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001223865
+                  charge after normalized = 26
+                 charge before normalized = 25.9999999999998
+                  charge after normalized = 26
+                 charge before normalized = 26.000000122475
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225141
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225313
+                  charge after normalized = 26.0000000000001
+                 charge before normalized = 25.9999999999999
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225496
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225581
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225614
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225634
+                  charge after normalized = 26
+                 charge before normalized = 25.9999999999999
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225644
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.000000122565
+                  charge after normalized = 26
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225651
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.000000122565
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.0000001225651
+                  charge after normalized = 26
+                 charge before normalized = 26
+                  charge after normalized = 26
+                 charge before normalized = 26.000000122565
+                  charge after normalized = 26.0000000000001
+                 charge before normalized = 26.0000000000001
+                  charge after normalized = 26
+                 charge before normalized = 26.000000122565
+                  charge after normalized = 26
+                 charge before normalized = 25.9999999999999
+                  charge after normalized = 26
+                 charge before normalized = 26.000000122565
+                  charge after normalized = 26
+                            startmag_type = 2
+                       charge from rho_at = 13.9093125033613
+                         charge should be = 14
+                            startmag_type = 2
+                       charge from rho_at = 5.9896683046285
+                         charge should be = 6
+ Warning: negative or imaginary starting charge :  neg = -0.000196958333513286 ima = 1.20600771614518e-14 SPIN = 0
+
+ SETUP ATOMIC RHO FOR SPIN 1
+                 Electron number from rho = 26
+           total electron number from rho = 26
+                                should be = 26

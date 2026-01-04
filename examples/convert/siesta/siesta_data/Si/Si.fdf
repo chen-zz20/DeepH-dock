@@ -1,0 +1,85 @@
+# -----------------------------------------------------------------------------
+# System definition
+# -----------------------------------------------------------------------------
+SystemName          Si_Diamond_FCC
+SystemLabel         Si
+
+# -----------------------------------------------------------------------------
+# Species and Atoms
+# -----------------------------------------------------------------------------
+NumberOfSpecies     1
+NumberOfAtoms       2
+
+%block ChemicalSpeciesLabel
+ 1  14  Si      # Species index, Atomic number, Species label
+%endblock ChemicalSpeciesLabel
+
+# -----------------------------------------------------------------------------
+# Lattice Vectors (FCC primitive cell)
+# -----------------------------------------------------------------------------
+LatticeConstant     5.430 Ang    # 硅的晶格常数
+
+%block LatticeVectors
+  0.000  0.500  0.500
+  0.500  0.000  0.500
+  0.500  0.500  0.000
+%endblock LatticeVectors
+
+# -----------------------------------------------------------------------------
+# Atomic Coordinates
+# -----------------------------------------------------------------------------
+AtomicCoordinatesFormat  ScaledByLatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+  0.000  0.000  0.000   1
+  0.250  0.250  0.250   1
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+# -----------------------------------------------------------------------------
+# DFT & Basis settings
+# -----------------------------------------------------------------------------
+XC.functional           GGA         # 交换关联泛函类型 (LDA or GGA)
+XC.authors              PBE         # PBE, PW91, etc.
+PAO.BasisSize           DZP         # 基组大小 (SZ, DZ, DZP...)
+PAO.EnergyShift         0.01 Ry     # 基组能量移动
+
+MeshCutoff              300.0 Ry    # 网格截断能 (精度控制)
+
+# -----------------------------------------------------------------------------
+# SCF settings
+# -----------------------------------------------------------------------------
+MaxSCFIterations        100         # 最大SCF迭代步数
+DM.MixingWeight         0.1         # 电荷密度混合权重
+DM.Tolerance            1.d-4       # 收敛精度
+SolutionMethod          diagon      # 求解方法
+
+# -----------------------------------------------------------------------------
+# K-point Sampling
+# -----------------------------------------------------------------------------
+%block kgrid_Monkhorst_Pack
+  8  0  0  0.0
+  0  8  0  0.0
+  0  0  8  0.0
+%endblock kgrid_Monkhorst_Pack
+
+# -----------------------------------------------------------------------------
+# Output options
+# -----------------------------------------------------------------------------
+WriteCoorXmol           .true.
+WriteMDXmol             .true.
+WriteDenchar            .true.
+WriteKpoints            .true.
+WriteEigenvalues        .true.
+
+# 开启能带计算功能
+BandLinesScale     ReciprocalLatticeVectors
+
+# 定义高对称路径 (L -> Gamma -> X -> U -> Gamma)
+# 每一行的格式为: 步数  kx  ky  kz  路径点标签
+%block BandLines
+1   0.500  0.500  0.500  L      # L 点
+30  0.000  0.000  0.000  \Gamma # Gamma 点 (用 \Gamma 或 G 表示)
+30  0.500  0.000  0.500  X      # X 点
+30  0.625  0.250  0.625  U      # U 点
+30  0.000  0.000  0.000  \Gamma # 回到 Gamma 点
+%endblock BandLines

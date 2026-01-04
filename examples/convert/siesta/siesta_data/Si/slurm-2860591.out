@@ -1,0 +1,7 @@
+Loading netcdf/4.4.1-parallel-icc20
+  Loading requirement: oneAPI/2022.1 mpi/oneAPI/2022.1 hdf5/1.8.13-icc
+OMP: Info #277: omp_get_nested routine deprecated, please use omp_get_max_active_levels instead.
+OMP: Info #277: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+stopping program
+Stopping Program from Node:    0
+Abort(1) on node 0 (rank 0 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 0

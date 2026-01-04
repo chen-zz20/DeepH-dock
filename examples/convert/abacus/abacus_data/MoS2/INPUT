@@ -1,0 +1,22 @@
+INPUT_PARAMETERS
+#Parameters	(General)
+pseudo_dir  /public/home/zhaobh/Program/Calc/ABACUS/ABACUS-orbitals/SG15_v1.0/SG15_v1.0_Pseudopotential/SG15_ONCV_v1.0_upf
+orbital_dir /public/home/zhaobh/Program/Calc/ABACUS/ABACUS-orbitals/SG15_v1.0/Orbitals
+calculation             scf
+#Parameters (Accuracy)
+ecutwfc			 60 ###Energy cutoff needs to be tested to ensure your calculation is reliable.[1]
+scf_thr         	1e-8
+scf_nmax		50
+smearing_sigma		0.002
+basis_type		lcao
+latname			hexagonal
+
+
+### [1] Energy cutoff determines the quality of numerical quadratures in your calculations.
+###     So it is strongly recommended to test whether your result (such as converged SCF energies) is
+###     converged with respect to the energy cutoff.
+
+out_bandgap 1
+out_mat_hs2 1
+out_mat_r 1
+out_dm1 1

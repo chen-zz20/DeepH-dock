@@ -1,0 +1,1 @@
+{"atoms_quantity": 1, "orbits_quantity": 52, "orthogonal_basis": false, "spinful": false, "fermi_energy_eV": null, "elements_orbital_map": {"Te": [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4]}, "elements_core_orbital_index": {"Te": [0, 1, 2, 3, 6, 7, 8, 11]}, "elements_valence_orbital_index": {"Te": [5, 9, 12]}, "elements_unoccupied_orbital_index": {"Te": [4, 10, 13, 14, 15]}}

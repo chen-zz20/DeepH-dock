@@ -1,0 +1,163 @@
+ In SCAN_END, can't find: </PP_RELBETA.1> block.
+ In SCAN_END, can't find: </PP_RELBETA.2> block.
+ In SCAN_END, can't find: </PP_RELBETA.3> block.
+ In SCAN_END, can't find: </PP_RELBETA.4> block.
+ In SCAN_END, can't find: </PP_RELBETA.5> block.
+ In SCAN_END, can't find: </PP_RELBETA.6> block.
+ In SCAN_END, can't find: </PP_RELBETA.7> block.
+ In SCAN_END, can't find: </PP_RELBETA.8> block.
+ In SCAN_END, can't find: </PP_RELBETA.9> block.
+ In SCAN_END, can't find: </PP_RELBETA.10> block.
+ In SCAN_END, can't find: </PP_SPIN_ORB> block.
+ In SCAN_END, can't find: </PP_RELBETA.1> block.
+ In SCAN_END, can't find: </PP_RELBETA.2> block.
+ In SCAN_END, can't find: </PP_RELBETA.3> block.
+ In SCAN_END, can't find: </PP_RELBETA.4> block.
+ In SCAN_END, can't find: </PP_RELBETA.5> block.
+ In SCAN_END, can't find: </PP_RELBETA.6> block.
+ In SCAN_END, can't find: </PP_RELBETA.7> block.
+ In SCAN_END, can't find: </PP_RELBETA.8> block.
+ In SCAN_END, can't find: </PP_RELBETA.9> block.
+ In SCAN_END, can't find: </PP_RELBETA.10> block.
+ In SCAN_END, can't find: </PP_SPIN_ORB> block.
+ AUTO_SET NBANDS to 35
+ Grid_Technique::init_atoms_on_grid  warning : No atom on this sub-FFT-mesh.
+      Processor           Atom
+              1             21
+              2             22
+              3             24
+              4             27
+              5             29
+              6             29
+              7             26
+              8             22
+              9             22
+             10             22
+             11             21
+             12             20
+             13             21
+             14             22
+             15             22
+             16             22
+             17             21
+             18             21
+             19              0
+             20              0
+             21              0
+             22              0
+             23              0
+             24              0
+             25              0
+             26              0
+             27              0
+             28              0
+             29              0
+             30              0
+             31              0
+             32              0
+             33              0
+             34              0
+             35              0
+             36              0
+             37              0
+             38              0
+             39              0
+             40              0
+             41              0
+             42              0
+             43              0
+             44              0
+             45              0
+             46              0
+             47              0
+             48              0
+             49              0
+             50              0
+             51              0
+             52              0
+             53              0
+             54              0
+             55              0
+             56              0
+             57              0
+             58              0
+             59              0
+             60              0
+             61              0
+             62              0
+             63              0
+             64              0
+                            startmag_type = 2
+                       charge from rho_at = 4.96797
+                         charge should be = 5
+                            startmag_type = 2
+                       charge from rho_at = 12.9241
+                         charge should be = 13
+
+ SETUP ATOMIC RHO FOR SPIN 1
+                 Electron number from rho = 18
+           total electron number from rho = 18
+                                should be = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000014950563
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000015751583
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016504042
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.000001657244
+                  charge after normalized = 18
+                 charge before normalized = 18.0000000000001
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016574047
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016601128
+                  charge after normalized = 18
+                 charge before normalized = 18.0000000000001
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016602204
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016602515
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016602268
+                  charge after normalized = 18
+                 charge before normalized = 17.9999999999999
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016600826
+                  charge after normalized = 18
+                 charge before normalized = 18.0000000000001
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016601098
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016601488
+                  charge after normalized = 18
+                 charge before normalized = 18
+                  charge after normalized = 18
+                 charge before normalized = 18.0000016602336
+                  charge after normalized = 18
+                            startmag_type = 2
+                       charge from rho_at = 4.96796556212016
+                         charge should be = 5
+                            startmag_type = 2
+                       charge from rho_at = 12.9241094537389
+                         charge should be = 13
+
+ SETUP ATOMIC RHO FOR SPIN 1
+                 Electron number from rho = 18
+           total electron number from rho = 18
+                                should be = 18

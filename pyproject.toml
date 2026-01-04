@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "deepx-dock"
+version = "1.1.0"
+authors = [
+    {name = "Whenhui Duan", email = "duanw@tsinghua.com"},
+    {name = "Yong Xu", email = "yongxu@tsinghua.com"},
+    {name = "All others in DeepH team", email = "deeph@tsinghua.com"},
+]
+description = "DeepH-pack dock that designed for DeepH-pack data preparation."
+readme = "README.md"
+license = "GPL-3.0-or-later"
+keywords = [
+    "DeepH-pack", "DeepH", "Physics", "Deep Learning", "Graph Neural Network", "JAX", "dock", "FHI-aims", "VASP", "OpenMX", "HPRO"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python"
+]
+
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "numpy",
+    "h5py",
+    "tqdm",
+    "toml",
+    "scipy",
+    "joblib",
+    "matplotlib",
+    "mendeleev",
+    "libtetrabz",
+    "threadpoolctl",
+    "click",
+    "ase",
+    "mpi4py",
+]
+
+[project.optional-dependencies]
+petsc = [
+    "mpi4py",
+    "numpy",
+    "petsc",
+    "petsc4py",
+]
+
+docs = [
+    "sphinx",
+    "sphinx-book-theme",
+    "sphinx-autobuild",
+    "ipykernel",
+    "myst_nb",
+    "nbstripout",
+    "recommonmark",
+    "ipython_genutils",
+    "sphinx-design",
+    "jupytext",
+    "docutils",
+]
+
+
+[project.urls]
+Repository = "https://github.com/kYangLi/DeepH-dock.git"
+
+[project.scripts]
+dock = "deepx_dock._cli:cli"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["deepx_dock*"]
+exclude = ["docs*", "examples*", "tests*",]
+
+[tool.setuptools.package-data]
+"deepx_dock" = [
+    "**/*.toml",
+    "**/*.h5",
+    "**/*.json",
+    "**/*.sh",
+    "**/Makefile",
+]
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120

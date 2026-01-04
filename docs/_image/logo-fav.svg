@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 59.56 61.57">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #e73828;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: url(#_未命名的渐变_344);
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+    </style>
+    <linearGradient id="_未命名的渐变_344" data-name="未命名的渐变 344" x1="10.21" y1="48.78" x2="48.21" y2="48.78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff2f1f"/>
+      <stop offset=".04" stop-color="#fe431a"/>
+      <stop offset=".12" stop-color="#fd6c12"/>
+      <stop offset=".21" stop-color="#fc8f0c"/>
+      <stop offset=".29" stop-color="#fba906"/>
+      <stop offset=".38" stop-color="#fbbc02"/>
+      <stop offset=".47" stop-color="#fbc800"/>
+      <stop offset=".56" stop-color="#fbcc00"/>
+      <stop offset=".8" stop-color="#f0932e"/>
+      <stop offset=".89" stop-color="#e9652d"/>
+      <stop offset="1" stop-color="#e4352b"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect class="cls-1" x="16.24" y="22.33" width="28.01" height="10.06"/>
+    <polygon class="cls-1" points="15.85 8.23 26.35 8.23 21.1 45.46 10.57 45.46 15.85 8.23"/>
+    <polygon class="cls-1" points="38.32 8.45 48.82 8.45 43.57 45.68 33.04 45.68 38.32 8.45"/>
+  </g>
+  <g>
+    <polyline class="cls-2" points="17.61 10.41 23.88 10.41 19.21 43.29 13.05 43.29"/>
+    <polyline class="cls-2" points="40.08 10.62 46.35 10.62 41.68 43.5 35.52 43.5"/>
+    <rect class="cls-2" x="18.52" y="24.54" width="23.43" height="5.65"/>
+  </g>
+  <line class="cls-3" x1="12.71" y1="48.78" x2="45.71" y2="48.78"/>
+</svg>

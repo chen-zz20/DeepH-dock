@@ -1,0 +1,30 @@
+INPUT_PARAMETERS
+#Parameters	(General)
+pseudo_dir              /public/home/zhaobh/Program/Calc/ABACUS/abacus-develop/tests/PP_ORB
+orbital_dir             /public/home/zhaobh/Program/Calc/ABACUS/abacus-develop/tests/PP_ORB
+ntype                   2
+nbands                  35
+gamma_only              0
+calculation             scf
+symmetry                0
+
+smearing_method         gaussian
+smearing_sigma          0.02
+#Parameters (3.PW)
+ecutwfc                 50
+scf_thr                 1e-8
+scf_nmax                100
+lspinorb                1
+nspin		            4
+
+#Parameters (LCAO)
+basis_type              lcao
+
+mixing_beta             0.4
+mixing_gg0              1.5
+
+
+
+out_mat_hs2 1
+out_mat_r 1
+out_dm1 1

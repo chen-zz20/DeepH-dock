@@ -1,0 +1,138 @@
+# 
+# File name and path
+#
+
+System.CurrrentDirectory          ./
+System.Name                       openmx
+level.of.stdout                   1
+level.of.fileout                  0
+DATA.PATH                         /public/home/tangzc/packages/openmx3.9/DFT_DATA19
+
+#
+# Defination of Atomic Species
+#
+
+Species.Number                    2
+<Definition.of.Atomic.Species
+ Bi   Bi8.0-s3p2d2          Bi_PBE19
+ Se   Se7.0-s3p2d1          Se_PBE19
+Definition.of.Atomic.Species>
+
+#
+# Structure
+#
+
+Atoms.Number                      5
+Atoms.SpeciesAndCoordinates.Unit  FRAC
+<Atoms.SpeciesAndCoordinates
+1 Bi   0.0000000000000000    0.0000000000000000    0.6015650000000000 7.5  7.5  0.0  0.0  0.0  0.0  0  off
+2 Bi   0.6666666666666661    0.3333333333333330    0.7317683333333330 7.5  7.5  0.0  0.0  0.0  0.0  0  off
+3 Se   0.6666666666666661    0.3333333333333330    0.5490483333333330 3.0  3.0  0.0  0.0  0.0  0.0  0  off
+4 Se   0.3333333333333330    0.6666666666666661    0.6666666666666661 3.0  3.0  0.0  0.0  0.0  0.0  0  off
+5 Se   0.0000000000000000    0.0000000000000000    0.7842850000000000 3.0  3.0  0.0  0.0  0.0  0.0  0  off
+Atoms.SpeciesAndCoordinates>
+Atoms.UnitVectors.Unit            Ang
+<Atoms.UnitVectors
+   2.0956832629406268   -3.6298298879848931    0.0000000000000000
+   2.0956832629406268    3.6298298879848931    0.0000000000000000
+   0.0000000000000000    0.0000000000000000   29.9286872022096198
+Atoms.UnitVectors>
+
+#
+# SCF Related Parameters
+#
+
+scf.XcType                        GGA-PBE
+scf.ElectronicTemperature         300.0
+scf.energycutoff                  300
+scf.maxIter                       1000
+scf.EigenvalueSolver              Band
+#scf.Ngrid                        _____________
+scf.Kgrid                           9   9    1
+scf.Generation.Kpoint             MP
+#scf.lapack.dste                  _____________
+scf.partialCoreCorrection         ON  
+
+## SOC and Noncollinear ##
+scf.SpinPolarization              NC
+scf.SpinOrbit.Coupling            On
+#scf.Constraint.NC.Spin            
+#scf.Constraint.NC.Spin.v          
+
+## Band analysis and Unfolding ##
+#Unfolding.Electronic.Band        __Unfolding.Electronic.Band__
+#Unfolding.LowerBound             __Unfolding.LowerBound__
+#Unfolding.UpperBound             __Unfolding.UpperBound__
+#Unfolding.Nkpoint                __Unfolding.Nkpoint__
+#Unfolding.desired_totalnkpt      __Unfolding.desired_totalnkpt__
+#<Unfolding.kpoint
+#__Unfolding.kpoint__
+#Unfolding.kpoint>
+
+## DFT-D3 VDW correction with zero damping functions ##
+#scf.dftD                         __scf.dftD__
+#version.dftD                     __version.dftD__
+#DFTD3.damp                       __DFTD3.damp__
+#DFTD.Unit                        __DFTD.Unit__
+#DFTD.rcut_dftD                   __DFTD.rcut_dftD__
+#DFTD.cncut_dftD                  __DFTD.cncut_dftD__
+#DFTD.IntDirection                __DFTD.IntDirection__
+## Mixing parameters related to RMM-DIIS method ##
+scf.Mixing.Type           rmm-diisk    # Simple|Rmm-Diis|Gr-Pulay|Kerker|Rmm-Diisk
+scf.Init.Mixing.Weight     0.01        # default=0.30 
+scf.Min.Mixing.Weight      0.05        # default=0.001 
+scf.Max.Mixing.Weight      0.20        # default=0.40 
+scf.Mixing.History         20          # default=5
+scf.Mixing.StartPulay      10          # default=6
+scf.criterion              9.0e-5      # default=1.0e-6 (Hartree) 
+scf.Electric.Field      0.0 0.0 0.0    # default=0 0 0 (GV/m)
+
+## 1DFFT ##
+1DFFT.NumGridK                    900
+1DFFT.NumGridR                    900
+1DFFT.EnergyCutoff                3600.0
+## Orbital Optimization ## (Blank)
+
+## LDA+U ##
+#scf.Hubbard.U                    __scf.Hubbard.U__
+#scf.Hubbard.Occupation           __scf.Hubbard.Occupation__
+#<Hubbard.U.values
+# __Hubbard.U.values__
+#Hubbard.U.values>
+
+## Others ##
+scf.ProExpn.VNA                   Off
+#scf.Electric.Field               _____________
+#scf.system.charge                _____________
+## Density of state ##
+#Dos.fileout                      _____________
+#Dos.Erange                       _____________
+#Dos.Kgrd                         _____________
+
+#
+# Geometry Optimization
+#
+
+MD.Type                           Nomd
+#MD.maxIter                       _____________
+#MD.Opt.criterion                 _____________
+
+#
+# Band Calculations
+#
+
+#Band.dispersion                   on
+#Band.Nkpath                       3
+#<Band.kpath
+# 60   0.000000000000  0.000000000000  0.000000000000   0.500000000000  0.000000000000  0.000000000000  \Gamma      M
+# 60   0.500000000000  0.000000000000  0.000000000000   0.333333333333  0.333333333333  0.000000000000       M      K
+# 60   0.333333333333  0.333333333333  0.000000000000   0.000000000000  0.000000000000  0.000000000000       K \Gamma
+#Band.kpath>
+
+#
+# Iterface for developers
+#
+
+HS.fileout                        On
+
+## END ##

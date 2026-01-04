@@ -1,0 +1,7 @@
+[misc]
+is_basis_orthogonal = 0
+spin_info = 3
+R_quantity = 19
+matrix_size = 160
+fermi_energy = -5.322743082011602
+orbits_type = "{ { 0, 0, 0, 1, 1, 2, 2, }, { 0, 0, 0, 1, 1, 2, 2, }, { 0, 0, 0, 1, 1, 2, }, { 0, 0, 0, 1, 1, 2, }, { 0, 0, 0, 1, 1, 2, }, }"

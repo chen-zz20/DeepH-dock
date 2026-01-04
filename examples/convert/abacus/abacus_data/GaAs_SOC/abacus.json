@@ -1,0 +1,204 @@
+{
+    "comment": "Unless otherwise specified, the unit of energy is eV and the unit of length is Angstrom",
+    "init": {
+        "element": {
+            "As": "As",
+            "Ga": "Ga"
+        },
+        "orb": {
+            "As": "/public/home/zhaobh/Program/Calc/ABACUS/abacus-develop/tests/PP_ORB/As_gga_8au_60Ry_2s2p1d.orb",
+            "Ga": "/public/home/zhaobh/Program/Calc/ABACUS/abacus-develop/tests/PP_ORB/Ga_gga_9au_60Ry_2s2p2d.orb"
+        },
+        "pp": {
+            "As": "As_ONCV_PBE-1.1.upf",
+            "Ga": "Ga_ONCV_PBE-soc-1.0.upf"
+        },
+        "coordinate": [
+            [
+                2.670985,
+                2.670985,
+                2.670985
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "mag": [
+            0.0,
+            0.0
+        ],
+        "label": [
+            "As",
+            "Ga"
+        ],
+        "cell": [
+            [
+                5.34197,
+                5.34197,
+                0.0
+            ],
+            [
+                0.0,
+                5.34197,
+                5.34197
+            ],
+            [
+                5.34197,
+                0.0,
+                5.34197
+            ]
+        ],
+        "point_group": "",
+        "point_group_in_space": "",
+        "natom": 2,
+        "nband": 35,
+        "natom_each_type": {
+            "As": 1,
+            "Ga": 1
+        },
+        "nelectron_each_type": {
+            "As": 5.0,
+            "Ga": 13.0
+        },
+        "nelectron": 18
+    },
+    "output": [
+        {
+            "e_fermi": null,
+            "energy": -1958.2824356939796,
+            "scf_converge": null,
+            "force": null,
+            "stress": null,
+            "coordinate": [
+                [
+                    2.670985,
+                    2.670985,
+                    2.670985
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            ],
+            "mag": [
+                0.0,
+                0.0
+            ],
+            "cell": [
+                [
+                    5.34197,
+                    5.34197,
+                    0.0
+                ],
+                [
+                    0.0,
+                    5.34197,
+                    5.34197
+                ],
+                [
+                    5.34197,
+                    0.0,
+                    5.34197
+                ]
+            ],
+            "total_mag": 0.0,
+            "absolute_mag": 2.9253445662272647e-13,
+            "scf": [
+                {
+                    "energy": -1958.2745294651058,
+                    "ediff": 0.0,
+                    "drho": 0.06813004415920461,
+                    "time": 0.8536725891754031
+                },
+                {
+                    "energy": -1958.2509423178972,
+                    "ediff": 0.023587147208623174,
+                    "drho": 0.0405992314017719,
+                    "time": 0.5680971285328269
+                },
+                {
+                    "energy": -1958.2813475754551,
+                    "ediff": -0.030405257557816256,
+                    "drho": 0.01403214448436816,
+                    "time": 0.5544486688449979
+                },
+                {
+                    "energy": -1958.2821735017324,
+                    "ediff": -0.0008259262773561288,
+                    "drho": 0.002274461260462767,
+                    "time": 0.5517753157764673
+                },
+                {
+                    "energy": -1958.2824218069986,
+                    "ediff": -0.00024830526629401986,
+                    "drho": 0.0011132313814570826,
+                    "time": 0.6382627142593265
+                },
+                {
+                    "energy": -1958.2824354309635,
+                    "ediff": -0.000013623964767753591,
+                    "drho": 0.00012914275238388407,
+                    "time": 0.5458794282749295
+                },
+                {
+                    "energy": -1958.282435680985,
+                    "ediff": -2.50021391709879e-7,
+                    "drho": 0.000010811600698955911,
+                    "time": 0.5462034186348319
+                },
+                {
+                    "energy": -1958.2824356932315,
+                    "ediff": -1.2246700170521764e-8,
+                    "drho": 0.000006433009696178717,
+                    "time": 0.553130648098886
+                },
+                {
+                    "energy": -1958.2824356940234,
+                    "ediff": -7.919558556750417e-10,
+                    "drho": 0.0000012768099294551128,
+                    "time": 0.5791601529344916
+                },
+                {
+                    "energy": -1958.282435695163,
+                    "ediff": -1.139596634118334e-9,
+                    "drho": 2.905767053356505e-7,
+                    "time": 0.5844685910269618
+                },
+                {
+                    "energy": -1958.2824356949466,
+                    "ediff": 2.165504292861442e-10,
+                    "drho": 7.239824534866413e-8,
+                    "time": 0.5517889652401209
+                },
+                {
+                    "energy": -1958.2824356946442,
+                    "ediff": 3.0239720661029423e-10,
+                    "drho": 1.4126470289369902e-8,
+                    "time": 0.544876666739583
+                },
+                {
+                    "energy": -1958.2824356939796,
+                    "ediff": 6.64732478469432e-10,
+                    "drho": 1.1525174472101232e-9,
+                    "time": 0.5478698210790753
+                }
+            ]
+        }
+    ],
+    "general_info": {
+        "version": "v3.10.0",
+        "commit": "e84abb490 (Sat Jun 28 13:06:46 2025 +0800)",
+        "device": "cpu",
+        "mpi_num": 64,
+        "omp_num": 1,
+        "pseudo_dir": "/public/home/zhaobh/Program/Calc/ABACUS/abacus-develop/tests/PP_ORB/",
+        "orbital_dir": "/public/home/zhaobh/Program/Calc/ABACUS/abacus-develop/tests/PP_ORB/",
+        "stru_file": "STRU",
+        "kpt_file": "KPT",
+        "start_time": "2025-08-02 13:07:24",
+        "end_time": "2025-08-02 13:07:42"
+    }
+}
