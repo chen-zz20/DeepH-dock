@@ -106,13 +106,7 @@ def test_equiv(
             np.arange(orbital_loc[0],orbital_loc[-1])
         ]
 
-    # print("atoms ", atoms)
-    # print("orbital_loc", orbital_loc)
-    # print("orbital_type_loc", orbital_type_loc)
-    # print("orbital_types_tot", orbital_types_tot)
-
     print("[do] analyzing ...")
-    mae = []
     entries_list = []
     obs_data_file_0 = dft_dir / "0" / f"{target}.h5"
     data_each_orbital_0 = get_obs_array(obs_data_file_0, R, orbital_loc)
@@ -140,23 +134,18 @@ def test_equiv(
         data_each_orbital_rot_back = rot_each_orbital.T @ data_each_orbital @ rot_each_orbital
         data_each_orbital_rot_back = data_each_orbital_rot_back[selected_orbitals[0], :][:, selected_orbitals[1]]
 
-        diff = data_each_orbital_rot_back - data_each_orbital_0
-
-        mae_now = np.mean(np.abs(diff), axis=(0,1))
-        mae.append(mae_now)
         entries_list.append(data_each_orbital_rot_back.reshape(-1))
 
     entries_list = np.array(entries_list)
     entries_mean = np.mean(entries_list, axis=0)
-    entries_mae = np.mean(np.abs(entries_list), axis=0)
-    entries_std = np.sqrt(np.mean((entries_list - entries_mean)**2, axis=0))
-    print("[data] Mean absolute value of entries:", np.mean(entries_mae))
-    print("[data] Standard deviation (std) of entries:", np.mean(entries_std))
-    print("[note] For Hamiltonian matrix, a std below 1e-4 eV is preferred.")
+    tot_ma = np.mean(np.abs(entries_list))
+    struct_rmse = np.sqrt(np.mean((entries_list - entries_mean)**2, axis=1))
+    print("[data] Mean absolute value of entries:", np.mean(tot_ma))
+    print("[data] Root mean square error (RMSE) of entries:", np.mean(struct_rmse))
+    print("[note] For Hamiltonian matrix, a RMSE below 1e-4 eV is preferred.")
 
-    plt.hist(np.array(mae))
-    plt.xlabel("Equivariance mae")
+    plt.hist(np.array(struct_rmse))
+    plt.xlabel("Equivariance RMSE")
     plt.ylabel("Count")
     plt.savefig(f"{dft_dir}/../equiv_mae.png")
-
 

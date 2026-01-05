@@ -1,15 +1,20 @@
 #!/bin/bash
 
+_pwd=$(pwd)
 script_path=$(realpath $(dirname $0))
-script_relative_path=$(echo $script_path | awk -F'/examples/' '{print $2}')
+script_relative_path=$(echo $script_path | awk -F'/tests/' '{print $2}')
 
-rm -rf poscars
-cp -r poscars.clean poscars
+cd ${script_path}
+rm -rf poscars dft_calc
+cp -rL poscars.clean poscars
+cp -rL dft_calc.bak dft_calc
 
 echo "[do] Running commands in ${script_relative_path} ..."
 dock analyze dft-equiv gen poscars -n 4 --translate
 sleep 1
-dock analyze dft-equiv test dft_calc.bak
+dock analyze dft-equiv test dft_calc
+echo "mv equiv_mae.png dft_calc/equiv_mae.png"
+mv equiv_mae.png dft_calc/equiv_mae.png
 sleep 1
 echo "[done] Running commands"
 
@@ -20,3 +25,4 @@ for d1 in $(ls poscars); do
   done
 done
 echo "[done] Checking"
+cd ${_pwd}
