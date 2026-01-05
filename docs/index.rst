@@ -58,7 +58,7 @@ Features
     .. grid-item::
         :columns: 12 12 12 6
 
-        .. card:: Collaborative & Open-sourced
+        .. card:: Collaborative & Open-Sourced
             :class-card: sd-border-0
             :shadow: none
             :class-title: sd-fs-5
