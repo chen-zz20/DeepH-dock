@@ -1,8 +1,10 @@
 #!/bin/bash
 
+_pwd=$(pwd)
 script_path=$(realpath $(dirname $0))
-script_relative_path=$(echo $script_path | awk -F'/examples/' '{print $2}')
+script_relative_path=$(echo $script_path | awk -F'/tests/' '{print $2}')
 
+cd ${script_path}
 rm -rf legacy updated standardize minus_core
 
 echo "[do] Running commands in ${script_relative_path} ..."
@@ -41,3 +43,4 @@ for d1 in $(ls minus_core); do
   done
 done
 echo "[done] Checking"
+cd ${_pwd}

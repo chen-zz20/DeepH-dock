@@ -1,10 +1,12 @@
 #!/bin/bash
 
+_pwd=$(pwd)
 script_path=$(realpath $(dirname $0))
-script_relative_path=$(echo $script_path | awk -F'/examples/' '{print $2}')
+script_relative_path=$(echo $script_path | awk -F'/tests/' '{print $2}')
 
+cd ${script_path}
 rm -rf eigen
-cp -r eigen.clean eigen
+cp -rL eigen.clean eigen
 
 echo "[do] Running commands in ${script_relative_path} ..."
 for d1 in $(ls eigen); do
@@ -23,3 +25,4 @@ for d1 in $(ls eigen); do
   done
 done
 echo "[done] Checking"
+cd ${_pwd}

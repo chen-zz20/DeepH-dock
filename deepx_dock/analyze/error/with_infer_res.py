@@ -798,13 +798,9 @@ class ErrorElementsPairDistributionAnalyzer(BaseAnalyzer):
             for i, label in enumerate(ax.xaxis.get_ticklabels()):
                 if i % 2 == 0:
                     label.set_y(1.0+(0.06-len(self.elem_list)/2000))
-                    # label.set_y(1.0+0.05)
-                    # label.set_y(1.0+0.03)
             for i, label in enumerate(ax.yaxis.get_ticklabels()):
                 if i % 2 == 0:
                     label.set_x(0.0-(0.1-len(self.elem_list)/1000))
-                    # label.set_x(0.0-0.08)
-                    # label.set_x(0.0-0.04)
         for cut_line in ticks_coord:
             plt.axvline(x=cut_line-0.5, linestyle='--', color='black', linewidth=0.2)
             plt.axhline(y=cut_line-0.5, linestyle='--', color='black', linewidth=0.2)

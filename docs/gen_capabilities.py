@@ -90,6 +90,13 @@ def scan_examples_and_generate_capabilities():
         
         entries.append((rst_relative_path, title))
     
+    for fig_path in examples_dir.rglob('*.png'):
+        rel_path = fig_path.relative_to(examples_dir)
+        
+        _, _ = generate_capability_rst(
+            fig_path, rel_path, capabilities_dir
+        )
+
     if entries:
         generate_capabilities_index(capabilities_dir, entries)
         
