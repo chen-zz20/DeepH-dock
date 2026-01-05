@@ -11,7 +11,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/kYangLi/DeepH-dock.svg)](https://github.com/kYangLi/DeepH-dock/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/kYangLi/DeepH-dock.svg?style=social)](https://github.com/kYangLi/DeepH-dock/stargazers)
 
-*Modular, extensible bridge between first-principles calculations and DeepH method*
+*Modular, extensible bridge between first-principles calculations and the DeepH method*
 </div>
 
 `DeepH-dock` is a **modular, extensible interface platform for quantum materials calculations, dedicated to building efficient and reliable bridges between first-principles calculations and the DeepH (deep learning Hamiltonian) method.** This platform integrates multiple density functional theory (DFT) software interfaces, supports DeepH predictions, and provides standardized data processing.
