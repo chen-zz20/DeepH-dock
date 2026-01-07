@@ -18,7 +18,7 @@
 
 At the core of DeepH-dock is **a unified and flexible interface layer that seamlessly connects mainstream DFT packages with the DeepH workflow**, enabling users to generate and utilize deep learning-based Hamiltonians with minimal effort. DeepH-dock offers first-class support for heterogeneous computational environments, allowing researchers to orchestrate complex multi-software workflows through a consistent Python API.
 
-For the most comprehensive usage documentation, please visit [https://deeph-dock.readthedocs.io/en/latest/](https://deeph-dock.readthedocs.io/en/latest/).
+For the most comprehensive usage documentation, please visit [https://deeph-dock.readthedocs.io/en/latest/](https://deeph-dock.readthedocs.io).
 
 - [Core Features](#core-features)
 - [Quick Start](#quick-start)
@@ -46,9 +46,7 @@ For the most comprehensive usage documentation, please visit [https://deeph-dock
 ### Installation
 
 ```bash
-git clone https://github.com/kYangLi/DeepH-dock.git
-cd DeepH-dock
-pip install -e .
+pip install git+https://github.com/kYangLi/DeepH-dock
 ```
 
 ### Basic Usage
@@ -102,6 +100,8 @@ We welcome contributions from the community! To ensure a consistent and maintain
 
 ### Development Workflow for Contributors
 
+A brief summary is provided below. Complete documentation can be found in the [Development Guide](https://deeph-dock.readthedocs.io/en/latest/for_developers/development_guide.html).
+
 1. **Identify the Target Module**
 
     First, determine which major module your contribution belongs to, based on the project architecture (e.g., `analyze`, `compute`, `convert`, `design`).
@@ -153,8 +153,6 @@ dock convert fhi-aims my-func
 ```
 
 The command's usage (arguments, options, help text) is entirely defined by the `click` decorators specified in `cli_args`. Please refer to the [official click documentation](https://click.palletsprojects.com/) for details on defining arguments and options.
-
-For additional details, refer to the [Development Guide](https://deeph-dock.readthedocs.io/en/latest/for_developers/development_guide.html).
 
 ## License
 
