@@ -20,6 +20,10 @@ At the core of DeepH-dock is **a unified and flexible interface layer that seaml
 
 For the most comprehensive usage documentation, please visit [https://deeph-dock.readthedocs.io](https://deeph-dock.readthedocs.io).
 
+For the latest version-specific documentation of DeepH-pack, please refer to the [corresponding repository](https://github.com/kYangLi/DeepH-pack-docs).
+
+---
+
 - [Core Features](#core-features)
 - [Quick Start](#quick-start)
   - [Installation](#installation)
