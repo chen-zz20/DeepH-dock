@@ -1,6 +1,6 @@
 # Key Concepts
 
-This section describes the core data formats used by the DeepH project for electronic structure calculations and materials modeling. In the latest version of [DeepH-pack](https://ticket.deeph-pack.com), we have adopted a new folder layout that is more lightweight, user-friendly, and optimized for high I/O throughput.
+This section describes the core data formats used by the DeepH project for electronic structure calculations and materials modeling. In the latest version of [DeepH-pack](https://github.com/kYangLi/DeepH-pack-docs), we have adopted a new folder layout that is more lightweight, user-friendly, and optimized for high I/O throughput.
 
 ## Overview
 
