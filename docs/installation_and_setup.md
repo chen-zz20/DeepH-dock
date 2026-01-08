@@ -29,7 +29,7 @@ cd ~/.uvenv
 uv venv deeph --python=3.13 # Create `deeph` venv in current dir
 ```
 
-Then, the uv virtual enviornment can be activate with command,
+Then, the uv virtual environment can be activate with command,
 
 ```bash
 source ~/.uvenv/deeph/bin/activate
