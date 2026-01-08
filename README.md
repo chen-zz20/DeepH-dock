@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 MD036 -->
 <h1><p align="center">
   <img src="./docs/_image/logo-large.svg" alt="DeepH-dock Logo" width="500">
 </p></h1>
@@ -76,7 +77,7 @@ Commands:
 
 ## Citation
 
-**Any and all use of this software, in whole or in part, should clearly acknowledge and link to this repository.**
+*Any and all use of this software, in whole or in part, should clearly acknowledge and link to this repository.*
 
 If you use this code in your academic work, please cite **the complete package featuring the latest implementation, methodology, and workflow of [DeepH](https://github.com/kYangLi/DeepH-pack-docs)**:
 
