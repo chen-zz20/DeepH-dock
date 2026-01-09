@@ -110,7 +110,7 @@ def rotate(cell:gto.Cell, theta:float, phi:float)->gto.Cell:
     Rz = np.array([[np.cos(phi),-np.sin(phi),0],[np.sin(phi),np.cos(phi),0],[0,0,1]])
     try:
         cell.a = np.dot(Rz, np.dot(Ry, cell.lattice_vectors().T)).T * Bohr2Ang
-    except:
+    except Exception:
         print("cell.a is not defined, it is not a periodic system.")
     #print(cell.a)
     atom_coords = np.dot(Rz, np.dot(Ry, cell.atom_coords().T)).T * Bohr2Ang
