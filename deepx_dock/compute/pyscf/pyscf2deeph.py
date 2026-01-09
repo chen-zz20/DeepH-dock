@@ -1,18 +1,13 @@
-import struct
 import numpy as np
-import re
 import collections
 import json
 import h5py
 import os, warnings
 
-from tqdm import tqdm
-
 import pyscf
 from pyscf.pbc import gto as pbcgto
 
 from functools import partial, wraps
-from joblib import Parallel, delayed
 
 from deepx_dock.compute.eigen.hamiltonian import HamiltonianObj
 from deepx_dock.CONSTANT import DEEPX_HAMILTONIAN_FILENAME, DEEPX_OVERLAP_FILENAME
