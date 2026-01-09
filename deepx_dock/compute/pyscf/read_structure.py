@@ -35,7 +35,7 @@ def get_cell_from_old_deeph(deeph_data_dir:str, basis:str|None=None):
     lat:np.ndarray = np.genfromtxt(os.path.join(deeph_data_dir, 'lat.dat')).T # each row is a lattice vector
     try:
         rlat:np.ndarray = np.genfromtxt(os.path.join(deeph_data_dir, 'rlat.dat')).T
-    except:
+    except Exception:
         rlat = np.linalg.inv(lat) * 2*np.pi
     site_positions:np.ndarray = np.genfromtxt(os.path.join(deeph_data_dir, 'site_positions.dat')).T
     site_positions_frac = site_positions @ np.linalg.inv(lat) # frac pos
