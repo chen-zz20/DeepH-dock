@@ -67,41 +67,38 @@ class AOMatrixK:
 @dataclass
 class AOMatrixObj:
     """
-    Tight-binding Hamiltonian in the matrix form.
+    The class of tight-binding operators, including overlap, Hamiltonian and density matrix.
     
-    This class constructs the Hamiltonian operator from the standard DeepH 
-    format data. The Hamiltonian and overlap matrix in real space (H(R) and S(R))
+    This class constructs a tight-binding operator from the standard DeepH 
+    format data. The Hamiltonian and overlap matrix in real space (such as  H(R) and S(R))
     are constructed and can be Fourier transformed to the reciprocal space 
-    (H(k) and S(k)). The diagonalization of the Hamiltonian is also supported.
-    
-    Parameters
-    ----------
-    info_dir_path : str 
-        Path to the directory containing the POSCAR, info.json and overlap.h5.
-    
-    H_file_path : str (optional)
-        Path to the Hamiltonian file. Default: hamiltonian.h5 under `info_dir_path`.
+    (such as H(k) and S(k)).
     
     Properties:
     ----------
-    lattice : np.array((3, 3), dtype=float)
-        Lattice vectors. Each row is a lattice vector.
-
-    reciprocal_lattice : np.array((3, 3), dtype=float)
-        Reciprocal lattice vectors. Each row is a reciprocal lattice vector.
-
     Rijk_list : np.array((N_R, 3), dtype=int)
         Lattice displacements for inter-cell hoppings.
         The displacements are expressed in terms of the lattice vectors.
         N_R is the number of displacements.
 
-    SR : np.array((N_R, N_b, N_b), dtype=float)
+    mats : np.array((N_R, N_b, N_b), dtype=float)
         Overlap matrix in real space. SR[i, :, :] = S(Rijk_list[i, :]).
         N_b is the number of basis functions in the unit cell (including the spin DOF if spinful is true).
     
-    HR : np.array((N_R, N_b, N_b), dtype=float/complex)
-        Hamiltonian matrix in real space. HR[i, :, :] = H(Rijk_list[i, :]).
+    type : str
+        Type of the matrix. It can be "hamiltonian", "overlap" or "density_matrix".
+    
+    spinful : bool
+        Whether the matrix is spinful.
         The dtype is float if spinful is false, otherwise the dtype is complex.
+
+    Methods:
+    ----------
+    r2k(ks)
+        Transform the matrix from real space to reciprocal space.
+
+    spinless_to_spinful()
+        Manually convert the spinless matrix to spinful matrix.
     """
     Rijk_list: np.array
     mats: np.array
@@ -110,6 +107,18 @@ class AOMatrixObj:
 
     @classmethod
     def from_file(cls, info_dir_path, matrix_file_path, type="hamiltonian"):
+        """
+        Parameters
+        ----------
+        info_dir_path : str 
+            Path to the directory containing the POSCAR, info.json and overlap.h5.
+        
+        matrix_file_path : str (optional)
+            Path to the Hamiltonian file. Default: hamiltonian.h5 under `info_dir_path`.
+        
+        type : str (optional)
+            Type of the matrix. Default: "hamiltonian".
+        """
         poscar_path, info_json_path, matrix_path = cls._get_necessary_data_path(info_dir_path, matrix_file_path, type)
         #
         atoms_quantity, orbits_quantity, is_orthogonal_basis, \
@@ -349,3 +358,21 @@ class AOMatrixObj:
             "frac_coords": result["frac_coords"],
         }
     
+    def r2k(self, ks):
+        # ks: (Nk, 3), Rs: (NR, 3) -> phase: (Nk, NR)
+        phase = np.exp(2j * np.pi * np.matmul(ks, self.Rs.T))
+        # MRs: (NR, Nb, Nb) -> flat: (NR, Nb*Nb)
+        MRs_flat = self.MRs.reshape(len(self.Rs), -1)
+        # (Nk, NR) @ (NR, Nb*Nb) -> (Nk, Nb*Nb)
+        Mks_flat = np.matmul(phase, MRs_flat)
+        return Mks_flat.reshape(len(ks), *self.MRs.shape[1:])
+    
+    def spinless_to_spinful(self):
+        if not self.spinful:
+            warnings.warn("The matrix is already spinful")
+            return self
+        _zeros_mats = np.zeros_like(self.MRs)
+        mats_spinful = np.block(
+            [[self.MRs, _zeros_mats], [_zeros_mats, self.MRs]]
+        )
+        return AOMatrixObj(mats_spinful, self.Rs, type=self.type, spinful=True)
