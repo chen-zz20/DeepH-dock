@@ -1,4 +1,8 @@
+from pathlib import Path
+import h5py
 from dataclasses import dataclass
+import warnings
+
 import numpy as np
 
 from deepx_dock.misc import load_json_file, load_poscar_file
@@ -131,7 +135,7 @@ class AOMatrixObj:
         atom_num_orbits, atom_num_orbits_cumsum = \
         cls._parse_orbital_types(elements, elements_orbital_map, orbits_quantity)
         #
-        Rijk_list, mats = cls._parse_matrix(type, matrix_path, spinful, atom_num_orbits, atom_num_orbits_cumsum)
+        Rijk_list, mats = cls._parse_matrix(type, matrix_path, orbits_quantity, atom_num_orbits, atom_num_orbits_cumsum, spinful)
         
         return cls(Rijk_list, mats, type, spinful)
 
@@ -192,11 +196,11 @@ class AOMatrixObj:
         return atom_num_orbits, atom_num_orbits_cumsum
 
     @staticmethod
-    def _parse_matrix(type, matrix_path, orbits_quantity, atom_num_orbits_cumsum, spinful):
+    def _parse_matrix(type, matrix_path, orbits_quantity, atom_num_orbits, atom_num_orbits_cumsum, spinful):
         if type == "overlap":
             return AOMatrixObj._parse_matrix_S_like(matrix_path, orbits_quantity, atom_num_orbits_cumsum, spinful)
         elif type == "hamiltonian" or type == "density_matrix":
-            return AOMatrixObj._parse_matrix_H_like(matrix_path, orbits_quantity, atom_num_orbits_cumsum, spinful)
+            return AOMatrixObj._parse_matrix_H_like(matrix_path, orbits_quantity, atom_num_orbits, atom_num_orbits_cumsum, spinful)
         else:
             raise ValueError(f"Unknown matrix type: {type}")
 
@@ -243,15 +247,12 @@ class AOMatrixObj:
         return Rijk_list, mats
 
     @staticmethod
-    def _parse_matrix_H_like(matrix_path, orbits_quantity, atom_num_orbits_cumsum, spinful):
+    def _parse_matrix_H_like(matrix_path, orbits_quantity, atom_num_orbits, atom_num_orbits_cumsum, spinful):
         mats_R = {}
         dtype = np.complex128 if spinful else np.float64
         atom_pairs, bounds, shapes, entries = \
             AOMatrixObj._read_h5(matrix_path, dtype=dtype)
-        assert np.array_equal(atom_pairs, atom_pairs), "The atom pairs is not the same."
         bands_quantity = orbits_quantity * (1 + spinful)
-        R_quantity = len(atom_pairs)
-        _matrix_shape = (R_quantity, bands_quantity, bands_quantity)
         for i_ap, ap in enumerate(atom_pairs):
             # Gen Data
             R_ijk = (ap[0], ap[1], ap[2])
@@ -303,10 +304,13 @@ class AOMatrixObj:
                 )
                 mats_R[R_ijk][_i_slice, _j_slice] = _mat_chunk
         #
+        R_quantity = len(mats_R)
+        _matrix_shape = (R_quantity, bands_quantity, bands_quantity)
+        Rijk_list = np.zeros((R_quantity, 3), dtype=int)
         mats = np.zeros(_matrix_shape, dtype=dtype)
-        for i_R in range(R_quantity):
-            R_ijk = Rijk_list[i_R]
-            mats[i_R] = mats_R[tuple(R_ijk)]
+        for i_R, (Rijk, mat_val) in enumerate(mats_R.items()):
+            Rijk_list[i_R] = Rijk
+            mats[i_R] = mat_val
         return Rijk_list, mats
 
     @staticmethod
@@ -360,19 +364,19 @@ class AOMatrixObj:
     
     def r2k(self, ks):
         # ks: (Nk, 3), Rs: (NR, 3) -> phase: (Nk, NR)
-        phase = np.exp(2j * np.pi * np.matmul(ks, self.Rs.T))
+        phase = np.exp(2j * np.pi * np.matmul(ks, self.Rijk_list.T))
         # MRs: (NR, Nb, Nb) -> flat: (NR, Nb*Nb)
-        MRs_flat = self.MRs.reshape(len(self.Rs), -1)
+        MRs_flat = self.mats.reshape(len(self.Rijk_list), -1)
         # (Nk, NR) @ (NR, Nb*Nb) -> (Nk, Nb*Nb)
         Mks_flat = np.matmul(phase, MRs_flat)
-        return Mks_flat.reshape(len(ks), *self.MRs.shape[1:])
+        return Mks_flat.reshape(len(ks), *self.mats.shape[1:])
     
     def spinless_to_spinful(self):
-        if not self.spinful:
+        if self.spinful:
             warnings.warn("The matrix is already spinful")
             return self
-        _zeros_mats = np.zeros_like(self.MRs)
+        _zeros_mats = np.zeros_like(self.mats)
         mats_spinful = np.block(
-            [[self.MRs, _zeros_mats], [_zeros_mats, self.MRs]]
+            [[self.mats, _zeros_mats], [_zeros_mats, self.mats]]
         )
-        return AOMatrixObj(mats_spinful, self.Rs, type=self.type, spinful=True)
+        return AOMatrixObj(self.Rijk_list, mats_spinful, type=self.type, spinful=True)
