@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD036 -->
 <h1><p align="center">
-  <img src="./docs/_image/logo-large.svg" alt="DeepH-dock Logo" width="500">
+  <img src="https://raw.githubusercontent.com/kYangLi/DeepH-dock/main/docs/_image/logo-large.svg" alt="DeepH-dock Logo" width="500">
 </p></h1>
 
 <div align="center">
