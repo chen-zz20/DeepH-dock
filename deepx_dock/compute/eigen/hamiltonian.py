@@ -655,6 +655,9 @@ class AOWfnObj:
 
     def to_dm(self, representation='k'):
         pass
+
+    def to_real_space(self):
+        pass
             
 """
 Aside: WfnAO object in the BSE program Pykernel (wfnao has shape (nk, nb, norb), and el has shape (nk, nb)):
